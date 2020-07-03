@@ -1,6 +1,6 @@
 import {
   hashPassword
-} from '../../helpers/utils';
+} from '../helpers/utils';
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
       required: true,
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      required: true
     }
   }, {});
   User.associate = (models) => {
